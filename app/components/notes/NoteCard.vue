@@ -1,14 +1,8 @@
 <script setup lang="ts">
+import type {Note} from "../../stores/notes";
+
 defineProps<{
-  note: {
-    id: string
-    title: string
-    todos: {
-      id: string
-      text: string
-      completed: boolean
-    }[]
-  }
+  note: Note
 }>()
 
 defineEmits<{
