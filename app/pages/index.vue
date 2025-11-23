@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import NoteCard from "../components/notes/NoteCard.vue";
 import Modal from "../components/ui/Modal.vue";
+import { useNotesStore } from '../stores/notes'
+
 import {onMounted} from "vue";
 
 const store = useNotesStore()

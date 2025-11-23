@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import type { Note } from '../../stores/notes'
+import { useNotesStore } from '../../stores/notes'
 import Modal from '../../components/ui/Modal.vue'
-
 const route = useRoute()
 const router = useRouter()
 const store = useNotesStore()
 
 const id = route.params.id as string
 
-const originalNote = computed(() => store.notes.find(n => n.id === id))
+const originalNote = computed(() => store.notes.find((n: Note) => n.id === id))
 if (!originalNote.value) {
   router.push('/')
 }
