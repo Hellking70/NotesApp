@@ -1,39 +1,25 @@
-# Nuxt Minimal Starter
+# Приложение для заметок (Тестовое задание)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Одностраничное приложение на **Nuxt** для управления заметками с поддержкой todo-списков.
 
-## Setup
+## 🚀 Запуск приложения
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Согласно требованиям тестового задания, приложение должно запускаться командой:
 
 ```bash
-# npm
-npm run dev
+docker-compose up
 ```
 
-## Production
+Приложение будет доступно по адресу: http://localhost:3000
 
-Build the application for production:
+### 🛠 Структура проекта
 
-```bash
-# npm
-npm run build
-```
+- `app/` — основная директория Nuxt-приложения
+- `app/components/` — переиспользуемые компоненты (`NoteCard.vue`, `Modal.vue`)
+- `app/pages/` — маршрутизация:
+    - `index.vue` — список заметок
+    - `[id].vue` — страница редактирования заметки
+- `app/stores/notes.ts` — хранилище состояния (Pinia) с синхронизацией в `localStorage`
+- `app/assets/main.scss` — глобальные стили с использованием SCSS
+- `Dockerfile`, `docker-compose.yaml` — конфигурация для развёртывания
 
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
